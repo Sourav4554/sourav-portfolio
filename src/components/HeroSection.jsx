@@ -20,9 +20,9 @@ export const HeroSection = () => {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-          I’m a passionate self-taught full stack developer specializing in the MERN stack (MongoDB, Express.js, React, Node.js). I focus on building responsive, user-friendly applications by mastering both front-end and back-end technologies
-          </p>
+          <span className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
+          I’m a passionate self-taught <span className="text-amber-600 font-bold">Full Stack Developer</span> specializing in the MERN stack (MongoDB, Express.js, React, Node.js). I focus on building responsive, user-friendly applications by mastering both front-end and back-end technologies
+          </span>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">
             <a href="#projects" className="cosmic-button bg-amber-600">
