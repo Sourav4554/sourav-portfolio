@@ -1,44 +1,55 @@
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { useState } from "react";
 
 const projects = [
   {
     id: 1,
-    title: "SaaS Landing Page",
-    description: "A beautiful landing page app using React and Tailwind.",
-    image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
-    githubUrl: "#",
+    title: "E-commerce WebApp",
+    description: "AquaCart is a full-fledged e-commerce platform for buying and selling ornamental fish. It provides a seamless shopping experience with features like product management, secure payments, shopping cart, wishlist, promo codes, and an AI chatbot for fish-related queries.",
+    image: "projects/aquacart.png",
+    tags: ["React", "Expressjs", "Mongodb"],
+    demoUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7316149980191211520/",
+    githubUrl: "https://github.com/Sourav4554/AquaCart",
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
+    title: "Quiz Website",
     description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
-    image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
+      "Excited to present my interactive Quiz App built with HTML, CSS, Bootstrap, and JavaScript! It features 10 engaging multiple-choice questions, a scoring system (1 point per correct answer), and sleek CSS animations for a dynamic user experience.",
+    image: "/projects/quizz.png",
+    tags: ["HTML", "CSS", "JS","Bootstrap"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://sourav4554.github.io/Quiz-application/",
   },
-  {
-    id: 3,
-    title: "E-commerce Platform",
-    description:
-      "Full-featured e-commerce platform with user authentication and payment processing.",
-    image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe"],
-    demoUrl: "#",
-    githubUrl: "#",
-  },
+  
+  // add more projects as needed
 ];
 
+const PROJECTS_PER_PAGE = 3;
+
 export const ProjectsSection = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(projects.length / PROJECTS_PER_PAGE);
+
+  const paginatedProjects = projects.slice(
+    (currentPage - 1) * PROJECTS_PER_PAGE,
+    currentPage * PROJECTS_PER_PAGE
+  );
+
+  const handlePrev = () => {
+    setCurrentPage((prev) => Math.max(prev - 1, 1));
+  };
+
+  const handleNext = () => {
+    setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+  };
+
   return (
     <section id="projects" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          {" "}
-          Featured <span className="text-primary"> Projects </span>
+          Featured <span className="text-amber-600"> Projects </span>
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
@@ -47,9 +58,9 @@ export const ProjectsSection = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, key) => (
+          {paginatedProjects.map((project) => (
             <div
-              key={key}
+              key={project.id}
               className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
             >
               <div className="h-48 overflow-hidden">
@@ -62,14 +73,19 @@ export const ProjectsSection = () => {
 
               <div className="p-6">
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <span className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground">
+                  {project.tags.map((tag, idx) => (
+                    <span
+                      key={idx}
+                      className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground"
+                    >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <h3 className="text-xl font-semibold mb-1"> {project.title}</h3>
+                <h3 className="text-xl font-semibold mb-1">
+                  {project.title}
+                </h3>
                 <p className="text-muted-foreground text-sm mb-4">
                   {project.description}
                 </p>
@@ -96,11 +112,32 @@ export const ProjectsSection = () => {
           ))}
         </div>
 
+        {/* Pagination Controls */}
+        <div className="mt-10 flex justify-center gap-4">
+          <button
+            onClick={handlePrev}
+            disabled={currentPage === 1}
+            className="px-4 py-2 rounded bg-muted text-muted-foreground hover:bg-muted/80  hover:text-amber-600 disabled:opacity-50 cursor-pointer"
+          >
+            Previous
+          </button>
+          <span className="px-4 py-2  text-muted-foreground text-amber-600 text-sm">
+           <span className="text-white"> Page</span> <span className="text-lg">{currentPage}</span> <span className="text-white">of</span> <span className="text-white">{totalPages}</span>
+          </span>
+          <button
+            onClick={handleNext}
+            disabled={currentPage === totalPages}
+            className="px-4 py-2 rounded bg-muted text-muted-foreground hover:bg-muted/80 hover:text-amber-600 disabled:opacity-50 cursor-pointer"
+          >
+            Next
+          </button>
+        </div>
+
         <div className="text-center mt-12">
           <a
-            className="cosmic-button w-fit flex items-center mx-auto gap-2"
+            className="cosmic-button w-fit flex items-center mx-auto gap-2 bg-amber-600"
             target="_blank"
-            href="https://github.com/machadop1407"
+            href="https://github.com/Sourav4554"
           >
             Check My Github <ArrowRight size={16} />
           </a>
