@@ -11,21 +11,20 @@ export const AboutSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <h3 className="text-2xl font-semibold">
-              Passionate Web Developer 
-            </h3>
+            <h3 className="text-2xl font-semibold">Passionate Web Developer</h3>
 
             <p className="text-muted-foreground">
-              With over 1 years of experience in web development, I specialize
-              in creating responsive, accessible, and performant web
-              applications using modern technologies.
+              I’m a freelance web developer with over a year of experience creating
+              responsive, accessible, and high‑performance web applications
+              using modern tools and best practices. I love turning ideas into
+              clean, user‑friendly interfaces and always strive for code that’s
+              both elegant and maintainable.
             </p>
 
             <p className="text-muted-foreground">
-              I'm passionate about creating elegant solutions to complex
-              problems, and I'm constantly learning new technologies and
-              techniques to stay at the forefront of the ever-evolving web
-              landscape.
+              Freelancing has taught me a lot—not just about coding, but also
+              about understanding real-world problems, managing time, and
+              communicating clearly with clients. 
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
@@ -51,7 +50,10 @@ export const AboutSection = () => {
                   <Code className="h-6 w-6 text-amber-600" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg"> Web Development</h4>
+                  <h4 className="font-semibold text-lg">
+                    {" "}
+                    Frontent Development
+                  </h4>
                   <p className="text-muted-foreground">
                     Creating responsive websites and web applications with
                     modern frameworks.
@@ -65,10 +67,10 @@ export const AboutSection = () => {
                   <User className="h-6 w-6 text-amber-600" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg">UI/UX Design</h4>
+                  <h4 className="font-semibold text-lg">Backend Development</h4>
                   <p className="text-muted-foreground">
-                    Designing intuitive user interfaces and seamless user
-                    experiences.
+                    Building robust server-side applications with Node.js and
+                    Express.js.
                   </p>
                 </div>
               </div>
@@ -80,15 +82,16 @@ export const AboutSection = () => {
                 </div>
 
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg">Project Management</h4>
+                  <h4 className="font-semibold text-lg">
+                    Full stack Developement
+                  </h4>
                   <p className="text-muted-foreground">
-                    Leading projects from conception to completion with agile
-                    methodologies.
+                    Combining frontend and backend skills to deliver complete
+                    web solutions.
                   </p>
                 </div>
               </div>
             </div>
-            
           </div>
         </div>
       </div>

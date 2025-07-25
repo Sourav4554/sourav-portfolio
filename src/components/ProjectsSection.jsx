@@ -4,6 +4,15 @@ import { useState } from "react";
 const projects = [
   {
     id: 1,
+    title: "Ai Food-Nutrition Detection WebApp",
+    description: "FoodSnap AI is a smart web application that allows users to snap or upload pictures of food—especially Kerala traditional dishes—and instantly receive detailed macro nutrient information, including calories, protein, carbs, sugar, fat, and fiber. It solves the lack of nutrition data available for local Kerala food by using a custom-trained AI model.",
+    image: "projects/foodsnap.png",
+    tags: ["Reactjs", "Expressjs", "Mongodb","tensorflow.js"],
+    demoUrl: "https://foodsnap-ai.onrender.com/",
+    githubUrl: "https://github.com/Sourav4554/foodsnap-ai/tree/solution-sourav-krishna",
+  },
+  {
+    id: 2,
     title: "E-commerce WebApp",
     description: "AquaCart is a full-fledged e-commerce platform for buying and selling ornamental fish. It provides a seamless shopping experience with features like product management, secure payments, shopping cart, wishlist, promo codes, and an AI chatbot for fish-related queries.",
     image: "projects/aquacart.png",
@@ -12,14 +21,14 @@ const projects = [
     githubUrl: "https://github.com/Sourav4554/AquaCart",
   },
   {
-    id: 2,
+    id: 3,
     title: "Quiz Website",
     description:
       "Excited to present my interactive Quiz App built with HTML, CSS, Bootstrap, and JavaScript! It features 10 engaging multiple-choice questions, a scoring system (1 point per correct answer), and sleek CSS animations for a dynamic user experience.",
     image: "/projects/quizz.png",
     tags: ["HTML", "CSS", "JS","Bootstrap"],
-    demoUrl: "#",
-    githubUrl: "https://sourav4554.github.io/Quiz-application/",
+    demoUrl: "https://sourav4554.github.io/Quiz-application/",
+    githubUrl: "https://github.com/Sourav4554/Quiz-application",
   },
   
   // add more projects as needed
@@ -67,11 +76,11 @@ export const ProjectsSection = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110 mt-[-5%]"
                 />
               </div>
 
-              <div className="p-6">
+              <div className="p-2">
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, idx) => (
                     <span

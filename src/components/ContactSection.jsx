@@ -53,19 +53,18 @@ export const ContactSection = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            <h3 className="text-2xl font-semibold mb-6">
-              {" "}
+          <div className="space-y-2">
+            <h3 className="text-2xl font-semibold mb-6 text-start ml-5">
               Contact Information
             </h3>
 
-            <div className="space-y-6 justify-center">
+            <div className="space-y-6 ">
               <div className="flex items-start space-x-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   <Mail className="h-6 w-6 text-amber-600" />{" "}
                 </div>
                 <div>
-                  <h4 className="font-medium"> Email</h4>
+                  <h4 className="font-medium text-start"> Email</h4>
                   <a
                     
                     className="text-muted-foreground hover:text-amber-600 transition-colors"
@@ -79,7 +78,7 @@ export const ContactSection = () => {
                   <Phone className="h-6 w-6 text-amber-600" />{" "}
                 </div>
                 <div>
-                  <h4 className="font-medium"> Phone</h4>
+                  <h4 className="font-medium text-start"> Phone</h4>
                   <a
                   
                     className="text-muted-foreground hover:text-amber-600 transition-colors"
@@ -93,7 +92,7 @@ export const ContactSection = () => {
                   <MapPin className="h-6 w-6 text-amber-600" />{" "}
                 </div>
                 <div>
-                  <h4 className="font-medium"> Location</h4>
+                  <h4 className="font-medium text-start"> Location</h4>
                   <a className="text-muted-foreground hover:text-amber-600 transition-colors">
                     Alappuzha,Kerala,India
                   </a>
@@ -102,8 +101,8 @@ export const ContactSection = () => {
             </div>
 
             <div className="pt-8">
-              <h4 className="font-medium mb-4"> Connect With Me</h4>
-              <div className="flex space-x-4 justify-center">
+              <h4 className="font-medium mb-4 text-start"> Connect With Me</h4>
+              <div className="flex space-x-8 justify-start ml-3">
                 <a
                   href="https://www.linkedin.com/in/sourav-krishna-6b4157280"
                   target="_blank"

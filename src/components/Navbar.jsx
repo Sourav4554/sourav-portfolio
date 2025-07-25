@@ -29,7 +29,7 @@ export const Navbar = () => {
         isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
       )}
     >
-      <div className="container flex items-center justify-around">
+      <div className="container flex items-center justify-between">
         <a
           className="text-xl font-bold text-amber-600 flex items-center"
           href="#hero"
